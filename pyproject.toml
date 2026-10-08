@@ -1,0 +1,32 @@
+[project]
+name = "agriql"
+version = "3.10.1"
+description = "Client for the AgriQL engine. This package is not a database."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+authors = [{ name = "Sbruice Singh", email = "sbruicesingh@haclon.in" }]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/SbruiceS/agriql-python"
+Issues = "https://github.com/SbruiceS/agriql-python/issues"
+
+[project.optional-dependencies]
+pandas = ["pandas"]
+polars = ["polars"]
+arrow = ["pyarrow"]
+geo = ["geopandas"]
+ml = ["numpy"]
+all = ["pandas", "polars", "pyarrow", "numpy"]
+
+[project.scripts]
+agriql = "agriql.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agriql*"]
